@@ -593,9 +593,9 @@
             path.setFill(params.selectedColor);
           }
       }
-      //console.log(selectedRegions);
       jQuery(params.container).trigger('regionClick.jqvmap', [code, mapData.pathes[code].name]);
     });
+    //Fix: selectedRegions was being updated only after the callback was invoked. When I click a state, the selectedRegions array should update immediately, not after the callback.
 
 
     if(params.showTooltip)
